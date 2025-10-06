@@ -1,0 +1,66 @@
+/* Fuente y colores generales */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #5b86e5, #36d1dc);
+  color: white;
+  margin: 0;
+  text-align: center;
+  animation: fadeInBody 2s ease-in;
+}
+
+header {
+  padding: 60px 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+/* Tarjetas */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 20px auto;
+  padding: 20px;
+  width: 80%;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Animaciones */
+@keyframes fadeInBody {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 2s forwards 1s;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
