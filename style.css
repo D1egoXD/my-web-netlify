@@ -1,78 +1,267 @@
-/* Fuente y colores generales */
+/* --- General Styles & Variables --- */
+:root {
+    --bg-dark: #0B2447;
+    --text-light: #F5F5F5;
+    --card-bg: #19376D;
+    
+    /* Alert Colors */
+    --green: #28a745;
+    --yellow: #ffc107;
+    --orange: #fd7e14;
+    --red: #dc3545;
+    --gray: #6c757d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #5b86e5, #36d1dc);
-  color: white;
-  margin: 0;
-  text-align: center;
-  animation: fadeInBody 2s ease-in;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
 }
 
-header {
-  padding: 60px 20px;
+h1, h2, h3, h4 {
+    line-height: 1.2;
+    font-weight: 600;
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
 p {
-  font-size: 1.2rem;
+    margin-bottom: 1rem;
 }
 
-/* Tarjetas */
-.card {
-  background: rgba(255, 255, 255, 0.1);
-  margin: 20px auto;
-  padding: 20px;
-  width: 80%;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
+/* --- Hero Section --- */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(11, 36, 71, 0.8), rgba(11, 36, 71, 0.8)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2532') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
 }
 
-.card:hover {
-  transform: scale(1.05);
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
 }
 
-/* Animaciones */
-@keyframes fadeInBody {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.hero-content p {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--green);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #218838;
+    transform: translateY(-3px);
+}
+
+/* --- Content Sections --- */
+.content-section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-section p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* --- How It Works / Infographic --- */
+.infographic-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    text-align: center;
+}
+
+.step {
+    flex: 1;
+}
+
+.step i {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    color: var(--yellow);
+}
+
+/* --- Alert Protocols --- */
+.protocols-container {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+}
+
+.protocol-column {
+    flex: 1;
+    max-width: 500px;
+}
+
+.protocol-column h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.alert-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.alert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.alert-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.alert-card .sound-desc {
+    font-weight: 300;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.alert-card p {
+    margin-bottom: 0.25rem;
+}
+
+.alert-card.green { border-color: var(--green); }
+.alert-card.yellow { border-color: var(--yellow); }
+.alert-card.orange { border-color: var(--orange); }
+.alert-card.red { border-color: var(--red); }
+.alert-card.gray { border-color: var(--gray); }
+
+/* --- Innovation & Sustainability --- */
+.features-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.feature-item i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--green);
+}
+
+/* --- Team Section --- */
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.team-card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.team-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.team-img-placeholder {
+    width: 150px;
+    height: 150px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 auto 1rem auto;
+    background-image: url('https://via.placeholder.com/300'); /* Placeholder image */
+    background-size: cover;
+}
+
+.team-card h4 {
+    margin-bottom: 0.25rem;
+}
+
+.team-card p {
+    font-size: 0.9rem;
+    color: var(--yellow);
+    margin: 0;
+}
+
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #081c3a;
+}
+
+/* --- Animations --- */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .fade-in {
-  opacity: 0;
-  animation: fadeIn 2s forwards;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 @keyframes fadeIn {
-  to { opacity: 1; }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-.slide-up {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideUp 2s forwards 1s;
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    h2 { font-size: 2.2rem; }
+    .hero-content h1 { font-size: 2.8rem; }
+    .protocols-container { flex-direction: column; align-items: center; }
 }
 
-@keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-body {
-  background: linear-gradient(270deg, #5b86e5, #36d1dc, #8e2de2);
-  background-size: 600% 600%;
-  animation: gradientMove 12s ease infinite;
+@media (max-width: 768px) {
+    h2 { font-size: 2rem; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-content p { font-size: 1.1rem; }
+    .infographic-container { flex-direction: column; }
+    .team-container { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
 }

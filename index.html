@@ -1,30 +1,180 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mi Página Web</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAT-C: Sistema de Alerta Temprana Comunitario</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1 class="fade-in">Bienvenido a mi página web</h1>
-  </header>
 
-  <main>
-    <section class="card">
-      <h2>Sobre mí</h2>
-      <p>hola! el xavi es puto </p>
-    </section>
+    <header id="inicio" class="hero-section">
+        <div class="hero-content">
+            <h1 class="fade-in">SAT-C: Sistema de Alerta Temprana Comunitario</h1>
+            <p class="hero-sede fade-in">INSTITUTO TECNOLÓGICO SUPERIOR DEL OCCIDENTE DEL ESTADO DE HIDALGO</p>
+            <p class="fade-in">Protegiendo a comunidades vulnerables de incendios e inundaciones con tecnología accesible y sostenible.</p>
+            <a href="#funcionamiento" class="cta-button fade-in">Conoce Cómo Funciona</a>
+        </div>
+    </header>
 
-    <section class="card">
-      <h2>Contacto</h2>
-      <p>Puedes escribirme a <a href="#">230110530@itsoeh.com</a></p>
-    </section>
-  </main>
+    <main>
+        <section id="problematica" class="content-section hidden">
+            <h2>La Urgente Necesidad de Alertas Oportunas</h2>
+            <p>En pequeñas localidades, la falta de sistemas de alerta temprana para incendios e inundaciones impide recibir avisos a tiempo, lo que aumenta los daños y reduce las oportunidades de prevención. La causa principal es la escasa inversión en infraestructura y la falta de información histórica, lo que genera destrucción ambiental, pérdidas materiales y humanas.</p>
+        </section>
 
-  <footer>
-    <p>© 2025 Mi Web. Todos los derechos reservados.</p>
-  </footer>
+        <section id="solucion" class="content-section hidden">
+            <h2>Nuestra Solución: SAT-C</h2>
+            <p>El SAT-C es un sistema de alerta temprana diseñado para detectar y comunicar riesgos de inundaciones e incendios. Utiliza sensores de nivel de agua (JSN-SR04T), temperatura/humedad (DHT22) y humo (MQ-2m), conectados a una placa ESP32 que transmite datos a larga distancia usando tecnología LoRa, ideal para zonas sin cobertura de internet.</p>
+        </section>
+
+        <section id="funcionamiento" class="content-section hidden">
+            <h2>Tecnología Sencilla, Alertas Claras</h2>
+            <div class="infographic-container">
+                <div class="step">
+                    <i class="fa-solid fa-satellite-dish"></i>
+                    <h3>Paso 1: Detección</h3>
+                    <p>Los nodos con sensores monitorean constantemente ríos y zonas forestales midiendo el nivel del agua, la temperatura o la presencia de humo.</p>
+                </div>
+                <div class="step">
+                    <i class="fa-solid fa-tower-broadcast"></i>
+                    <h3>Paso 2: Comunicación</h3>
+                    <p>Si se detecta un riesgo, el nodo envía una alerta inmediata vía LoRa a una estación de monitoreo sin necesidad de Wi-Fi o red celular.</p>
+                </div>
+                <div class="step">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <h3>Paso 3: Alerta Doble Capa</h3>
+                    <p>Se activan alertas locales (sirenas y mensajes de voz) y digitales (SMS y visualización en Node-RED) para una respuesta rápida y coordinada.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="protocolos" class="content-section hidden">
+            <h2>Entiende Nuestras Alertas: Códigos de Color y Sonido</h2>
+            <div class="protocols-container">
+                <div class="protocol-column">
+                    <h3><i class="fa-solid fa-water"></i> Inundaciones</h3>
+                    <div class="alert-card green">
+                        <h4>Verde <span class="sound-desc">(Sonido breve)</span></h4>
+                        <p><strong>Significado:</strong> Vigilancia normal.</p>
+                        <p><strong>Acción:</strong> Mantenerse informado.</p>
+                    </div>
+                    <div class="alert-card yellow">
+                        <h4>Amarillo <span class="sound-desc">(Sonido intermitente)</span></h4>
+                        <p><strong>Significado:</strong> Riesgo moderado.</p>
+                        <p><strong>Acción:</strong> Preparar mochila de emergencia.</p>
+                    </div>
+                    <div class="alert-card red">
+                        <h4>Roja <span class="sound-desc">(Sirena continua)</span></h4>
+                        <p><strong>Significado:</strong> Inundación o desborde.</p>
+                        <p><strong>Acción:</strong> Evacuar por rutas seguras.</p>
+                    </div>
+                    <div class="alert-card gray">
+                        <h4>Gris <span class="sound-desc">(Mensaje)</span></h4>
+                        <p><strong>Significado:</strong> Fin del evento.</p>
+                        <p><strong>Acción:</strong> No regresar hasta que sea seguro.</p>
+                    </div>
+                </div>
+                <div class="protocol-column">
+                    <h3><i class="fa-solid fa-fire-flame-curved"></i> Incendios</h3>
+                    <div class="alert-card green">
+                        <h4>Verde <span class="sound-desc">(Sonido breve)</span></h4>
+                        <p><strong>Significado:</strong> Sin peligro.</p>
+                        <p><strong>Acción:</strong> Evitar fogatas.</p>
+                    </div>
+                    <div class="alert-card yellow">
+                        <h4>Amarillo <span class="sound-desc">(Sonido intermitente)</span></h4>
+                        <p><strong>Significado:</strong> Riesgo medio.</p>
+                        <p><strong>Acción:</strong> Preparar evacuación.</p>
+                    </div>
+                    <div class="alert-card orange">
+                        <h4>Naranja <span class="sound-desc">(Sirena con pausas)</span></h4>
+                        <p><strong>Significado:</strong> Fuego cercano.</p>
+                        <p><strong>Acción:</strong> Evacuar personas vulnerables.</p>
+                    </div>
+                    <div class="alert-card red">
+                        <h4>Roja <span class="sound-desc">(Sirena continua)</span></h4>
+                        <p><strong>Significado:</strong> Incendio en la zona.</p>
+                        <p><strong>Acción:</strong> Evacuar inmediatamente.</p>
+                    </div>
+                    <div class="alert-card gray">
+                        <h4>Gris <span class="sound-desc">(Mensaje)</span></h4>
+                        <p><strong>Significado:</strong> Fuego controlado.</p>
+                        <p><strong>Acción:</strong> Evitar volver hasta indicación oficial.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="innovacion" class="content-section hidden">
+            <h2>Innovación con Impacto Social y Ambiental</h2>
+            <div class="features-container">
+                <div class="feature-item">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                    <h3>Bajo Costo y Accesible</h3>
+                    <p>Combina sensores de bajo costo, hardware de código abierto y no requiere permisos ni infraestructura compleja.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-solar-panel"></i>
+                    <h3>Autonomía Energética</h3>
+                    <p>Cada nodo opera con energía solar limpia y continua gracias a un panel de 6V / 5W, reduciendo el impacto ambiental.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-recycle"></i>
+                    <h3>Diseño Modular Sostenible</h3>
+                    <p>Si un componente falla, solo se reemplaza esa pieza y los materiales se reciclan. Esto asegura un mantenimiento de bajo costo.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-brands fa-nasa"></i>
+                    <h3>Precisión Reforzada</h3>
+                    <p>Integramos imágenes satelitales gratuitas del programa ARSET de la NASA para reforzar la precisión del sistema.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="equipo" class="content-section hidden">
+            <h2>El Equipo Detrás de SAT-C: DHCPV6</h2>
+            <div class="team-container">
+                <div class="team-card">
+                    <div class="team-img-placeholder"></div>
+                    <h4>[ANDREA JACOB SALAS]</h4>
+                    <p>[Líder]</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-placeholder"></div>
+                    <h4>[BRYAN FUENTES PÉREZ]</h4>
+                    <p>[Integrante]</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-placeholder"></div>
+                    <h4>[DIEGO LOZANO CAMARGO]</h4>
+                    <p>[Integrante]</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-placeholder"></div>
+                    <h4>[XAVIER AMED GUERRERO HERNÁNDEZ]</h4>
+                    <p>[Integrante]</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-placeholder"></div>
+                    <h4>[Nombre del Integrante 5]</h4>
+                    <p>[ANGELES SUGELI LOPEZ CRUZ]</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 DHCPV6. Todos los derechos reservados.</p>
+    </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
