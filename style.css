@@ -202,14 +202,15 @@ p {
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-.team-img-placeholder {
+/* Reemplaza .team-img-placeholder con esto */
+.team-card img {
     width: 150px;
     height: 150px;
-    background-color: #ccc;
-    border-radius: 50%;
+    border-radius: 50%; /* Esto hace la imagen redonda */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
     margin: 0 auto 1rem auto;
-    background-image: url('https://via.placeholder.com/300'); /* Placeholder image */
-    background-size: cover;
+    border: 3px solid var(--card-bg);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .team-card h4 {
@@ -265,3 +266,4 @@ footer {
     .infographic-container { flex-direction: column; }
     .team-container { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
 }
+/* Reemplaza .team-img-placeholder con esto */
